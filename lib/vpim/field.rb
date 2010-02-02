@@ -237,10 +237,10 @@ module Vpim
         l = @line
         # Wrap to width, unless width is zero.
         if width > 0
-          l = l.gsub(/.{#{width},#{width}}/) { |m| m + "\n " }
+          l = l.gsub(/.{#{width},#{width}}/) { |m| m + "\r\n " }
         end
         # Make sure it's terminated with no more than a single NL.
-        l.gsub(/\s*\z/, '') + "\n"
+        l.gsub(/\s*\z/, '') + "\r\n"
       end
 
       alias to_s encode
